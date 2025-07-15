@@ -1,0 +1,15 @@
+{
+  "log": {"loglevel": "info"},
+  "inbounds": [
+    {
+      "port": 443,
+      "protocol": "vless",
+      "settings": {"clients": []},
+      "streamSettings": {
+        "security": "reality",
+        "realitySettings": {"show": false}
+      }
+    }
+  ],
+  "outbounds": [{"protocol": "freedom"}]
+}
