@@ -7,7 +7,8 @@ python /app/generate_config.py
 
 if [ ! -f /usr/local/bin/xray ]; then
     echo "Downloading Xray core..."
-    curl -L -o /usr/local/bin/xray https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip || true
+    curl -L -o /tmp/xray.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip || true
+    unzip -o /tmp/xray.zip xray -d /usr/local/bin/ || true
     chmod +x /usr/local/bin/xray || true
 fi
 
