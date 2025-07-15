@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>GpLehiy Enterprise Zen</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        button { margin: 5px; }
+    </style>
+</head>
+<body>
+<h1>GpLehiy Enterprise Zen Edition™</h1>
+<p>CPU: {{ cpu }}% | Memory: {{ mem }}%</p>
+<p>Всего пользователей: {{ users|length }}</p>
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr><th>Имя</th><th>UUID</th></tr>
+    {% for u in users %}
+    <tr><td>{{ u.name }}</td><td>{{ u.uuid }}</td></tr>
+    {% endfor %}
+</table>
+<form action="/add_user" method="post">
+    <input type="text" name="name" placeholder="Имя пользователя" required>
+    <button type="submit">Подкинуть кожаного</button>
+</form>
+<button>Посмотреть Zen</button>
+<button>Разгрузить порталы</button>
+<button>Поймать трафик</button>
+<p>GpLehiy Zen • Сделай вдох и наблюдай за трафиком...</p>
+</body>
+</html>
